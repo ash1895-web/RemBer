@@ -1,0 +1,20 @@
+.landingPageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 16rem;
+    height: 10rem;
+    margin: auto;
+}
+
+.title {
+    justify-self: center;
+}
+
+.login {
+    text-decoration: none;
+    padding: 1rem;
+    width: fit-content;
+}
