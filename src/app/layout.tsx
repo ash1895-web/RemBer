@@ -3,15 +3,19 @@ import { getServerSession } from 'next-auth';
 import SessionProvider from './components/sessionProvider';
 
 import './globals.css'
+import Navbar from './components/navbar';
 
 export default async function App({ children }: { children: ReactNode }): Promise<JSX.Element> {
   const session = await getServerSession()
 
   return (
-    <body>
-      <SessionProvider session={session}>
-        {children}
-      </SessionProvider>
-    </body>
+    <html lang="en">
+      <body>
+        <SessionProvider session={session}>
+          <Navbar />
+          {children}
+        </SessionProvider>
+      </body>
+    </html>
   );
 }
