@@ -1,5 +1,5 @@
 :root {
-    --primary-bg-color: blueviolet
+    --primary-bg-color: blueviolet;
 }
 
 * {
@@ -9,6 +9,10 @@
 
 .main-div {
     display: flex;
+}
+
+.content-container {
+    width: 100%;
 }
 
 .primaryBtn {

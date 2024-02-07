@@ -18,7 +18,7 @@ export default async function App({ children }: { children: ReactNode }): Promis
         <SessionProvider session={session}>
           <div className='main-div'>
             <VerticalNav />
-            <div>
+            <div className='content-container'>
               <Navbar />
               {children}
             </div>
