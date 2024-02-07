@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+.container p {
+    margin-left: 0.1rem;
+    background-color: var(--primary-bg-color);
+    z-index: 1;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.container i {
+    padding: 0.5rem 0;
+}

@@ -1,9 +1,18 @@
 :root {
-    --primary-color: blueviolet
+    --primary-bg-color: blueviolet
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-div {
+    display: flex;
 }
 
 .primaryBtn {
-    background-color: var(--primary-color);
+    background-color: var(--primary-bg-color);
     color: white;
     margin: 1rem;
 }
