@@ -1,5 +1,5 @@
 .verticalNavContainer {
     background-color: var(--primary-bg-color);
     width: 2.5rem;
-    height: 100vh;
+    padding-top: 1.3rem;
 }
