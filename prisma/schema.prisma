@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output = "../src/.prisma/client"
+  output   = "../src/.prisma/client"
 }
 
 datasource db {
@@ -9,8 +9,25 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(uuid())
-  name     String
-  email    String  @unique
-  image    String?
+  id      String  @id @default(uuid())
+  name    String
+  email   String  @unique
+  image   String?
+  role_id Int?
+  role    Role?   @relation(fields: [role_id], references: [id])
+}
+
+model Role {
+  id          Int          @id @default(autoincrement())
+  name        String
+  description String?
+  User        User[]
+  permission  Permission[] @relation("PermissionToRole")
+}
+
+model Permission {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  roles       Role[]  @relation("PermissionToRole")
 }

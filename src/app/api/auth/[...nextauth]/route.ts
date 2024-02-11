@@ -5,7 +5,7 @@ import NextAuth from "next-auth/next";
 const googleClientId = process.env.GOOGLE_CLIENT_ID!
 const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET!
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
     session: {
         strategy: "jwt"
     },
