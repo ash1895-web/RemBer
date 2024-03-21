@@ -28,6 +28,6 @@ model Role {
 model Permission {
   id          Int     @id @default(autoincrement())
   name        String
-  description String?
+  description String
   roles       Role[]  @relation("PermissionToRole")
 }

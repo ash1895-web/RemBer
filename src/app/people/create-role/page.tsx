@@ -1,5 +1,7 @@
-export default function CreateRole(){
-    return(
-        <div>Role Form</div>
-    )
+import { CreateRoleForm } from './form';
+import { prisma } from '@/prisma';
+
+export default async function CreateRole() {
+    const permissions = await prisma.permission.findMany()
+    return <CreateRoleForm permissions={permissions}/>
 }
