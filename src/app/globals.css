@@ -39,3 +39,13 @@ a {
     cursor: pointer;
     width: fit-content;
 }
+
+.material-section {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), 0px 4px 5px rgba(0, 0, 0, 0.08), 0px 1px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, #41215f, white);
+    padding: 1.25rem;
+    color: white;
+    font-size: 1rem;
+    margin: 1rem 0;
+}

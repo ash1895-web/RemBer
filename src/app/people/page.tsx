@@ -8,7 +8,7 @@ export default function People(){
         <div className='page-container'>
             <div className={styles.btnContainer}>
                 <Link href='/people/add-people' className='primary-btn'>Add People</Link>
-                <Link href='/people/create-role' className='primary-btn'>Create Role</Link>
+                <Link href='/people/manage-roles' className='primary-btn'>Manage Roles</Link>
             </div>
         </div>
     )
