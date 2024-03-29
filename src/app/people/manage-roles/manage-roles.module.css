@@ -1,0 +1,28 @@
+.roleContainer {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.roleName {
+    flex-basis: 20%;
+}
+
+.roleDescription {
+    flex-basis: 40%;
+}
+
+.permissionTagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 40%;
+}
+
+.permissionTag {
+    background-color: blue;
+    color: white;
+    margin: 0.25rem;
+    padding: 6px;
+    border-radius: 0.75rem;
+}

@@ -30,7 +30,7 @@ export function CreateRoleForm({ permissions }: props) {
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" required />
             <label htmlFor="description">Description</label>
-            <input type="text" id="description" name="description" />
+            <input type="text" id="description" name="description" required/>
             <p>Permissions*</p>
             {permissions && permissions.map((permission, i) =>
                 <React.Fragment key={i}>
