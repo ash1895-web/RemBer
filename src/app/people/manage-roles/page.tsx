@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { revalidatePath } from "next/cache";
 
 import { prisma } from "@/prisma";
+import DeleteBtn from "@/app/components/delete-btn/deleteBtn";
 import styles from './manage-roles.module.css';
 
 export const MAXIMUM_ROLES_THAT_CAN_BE_CREATED = 5
@@ -13,9 +15,17 @@ export default async function People() {
         },
         include: {
             permission: true,
-            User: true,
         }
     })
+
+    async function deleteRole(roleId:number){
+        'use server'
+        await prisma.role.delete({
+            where: { id: roleId },
+        })
+
+        revalidatePath('/people/manage-roles')
+    }
 
     return (
         <div className='page-container'>
@@ -32,6 +42,7 @@ export default async function People() {
                     <p className={styles.roleName}>{role.name}</p>
                     <p className={styles.roleDescription}>{role.description}</p>
                     <div className={styles.permissionTagContainer}>{role.permission.map((perm, i) => <span key={i} className={styles.permissionTag}>{perm.name}</span>)}</div>
+                    <DeleteBtn id={role.id} deleteFunction={deleteRole}/>
                 </div>
                 )}
             </div>

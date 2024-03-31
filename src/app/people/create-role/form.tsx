@@ -2,6 +2,7 @@
 'use client'
 import React from "react"
 import { useFormState } from "react-dom"
+import { redirect } from "next/navigation"
 
 import { CreateRoleAction } from "../../api/roles/actions"
 
@@ -25,6 +26,10 @@ const initialState: InitialState = {
 export function CreateRoleForm({ permissions }: props) {
     const [state, formAction] = useFormState(CreateRoleAction, initialState)
 
+    if (state.success) {
+        redirect('/people/manage-roles')
+    }
+
     return (
         <form action={formAction}>
             <label htmlFor="name">Name</label>
@@ -38,7 +43,6 @@ export function CreateRoleForm({ permissions }: props) {
                     <input type="checkbox" id={permission.name} name="permission" value={permission.id} />
                 </React.Fragment>)}
             <button type="submit">Sign up</button>
-            {state.success && 'Role created'}
             {state.errorMsg && 'Please enter correct data'}
         </form>
     )
