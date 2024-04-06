@@ -38,6 +38,8 @@ a {
     border-radius: 0.5rem;
     cursor: pointer;
     width: fit-content;
+    display: inline;
+    margin: 0.5rem;
 }
 
 .material-section {

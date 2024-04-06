@@ -14,7 +14,7 @@ model User {
   email   String  @unique
   image   String?
   role_id Int?
-  role    Role?   @relation(fields: [role_id], references: [id])
+  role    Role?   @relation(fields: [role_id], references: [id], onDelete: SetNull)
 }
 
 model Role {
@@ -26,8 +26,8 @@ model Role {
 }
 
 model Permission {
-  id          Int     @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   name        String
   description String
-  roles       Role[]  @relation("PermissionToRole")
+  roles       Role[] @relation("PermissionToRole")
 }
