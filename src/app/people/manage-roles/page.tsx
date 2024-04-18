@@ -5,7 +5,7 @@ import { prisma } from "@/prisma";
 import DeleteBtn from "@/app/components/delete-btn/deleteBtn";
 import styles from './manage-roles.module.css';
 
-export const MAXIMUM_ROLES_THAT_CAN_BE_CREATED = 5
+const MAXIMUM_ROLES_THAT_CAN_BE_CREATED = 5
 
 export default async function People() {
     const roles = await prisma.role.findMany({
