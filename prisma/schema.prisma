@@ -10,11 +10,13 @@ datasource db {
 
 model User {
   id      String  @id @default(uuid())
+  serial_number Int @default(autoincrement()) @unique
   name    String
   email   String  @unique
   image   String?
   role_id Int?
   role    Role?   @relation(fields: [role_id], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
 }
 
 model Role {
