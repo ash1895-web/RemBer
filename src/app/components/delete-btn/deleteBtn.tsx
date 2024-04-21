@@ -1,9 +1,8 @@
 'use client'
 
-type id = number|string
 type props = {
-    id: id,
-    deleteFunction: (id:id)=>void
+    id: number|string,
+    deleteFunction: (id:any)=>Promise<void>
 }
 
 export default function DeleteBtn(props:props){
