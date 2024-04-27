@@ -49,9 +49,9 @@ export default function ViewUsers() {
     return (
         <div className="page-container">
             <p>All Users</p>
+            {(disableNextBtn || disablePreviousBtn) && <p>You are at the end of list</p>}
             {users?.map((user, i) => <li key={i}>{user.name}</li>)}
             <Pagination fetchData={fetchUsers} disableNextBtn={disableNextBtn || !users.length} disablePreviousBtn={disablePreviousBtn || !users.length} />
         </div>
     )
 }
-
