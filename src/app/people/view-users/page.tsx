@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { User } from "@/global-types"
 import Pagination from "@/app/components/pagination"
 import getUsers, { getFirstUsers } from "./getUsers"
+import Link from "next/link"
 
 export default function ViewUsers() {
     const USER_LIST_SIZE = 3
@@ -48,6 +49,7 @@ export default function ViewUsers() {
 
     return (
         <div className="page-container">
+            <Link href='/people/search-user' className="primary-btn">Search User</Link>
             <p>All Users</p>
             {(disableNextBtn || disablePreviousBtn) && <p>You are at the end of list</p>}
             {users?.map((user, i) => <li key={i}>{user.name}</li>)}
